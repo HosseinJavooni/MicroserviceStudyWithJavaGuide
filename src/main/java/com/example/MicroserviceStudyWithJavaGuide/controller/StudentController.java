@@ -69,7 +69,7 @@ public class StudentController {
     }
     //======================================
     // For Test This api:
-    // curl -vX POST "http://localhost:8080/student/jpa/create" -H "Content-Type:application/json" --data '{"id": 398, "firstName":"hossein", "lastName":"jabani", "email": "h.ja@gmail.com"}'
+    // curl -vX POST "http://localhost:8080/student/jpa/create" -H "Content-Type:application/json" --data '{"firstName":"hossein", "lastName":"jabani", "email": "h.ja@gmail.com"}'
     @PostMapping("/jpa/create")
     public ResponseEntity<Student> saveStudent(@RequestBody Student student){
         return new ResponseEntity(studentService.createStudent(student), HttpStatus.CREATED);
