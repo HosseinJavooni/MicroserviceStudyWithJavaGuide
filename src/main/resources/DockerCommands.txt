@@ -1,0 +1,6 @@
+1- sudo docker load -i gvenzl_oracle-xe_Oracle_Database_21c_Express_Edition_Release_.tar.gz
+2- sudo docker tag <image-id> gvenzl/oracle-xe:21c
+3- sudo mkdir -p /opt/oracle/oracle-data
+4- sudo chmod -R 777 /opt/oracle/oracle-data/
+5- sudo docker run -p 1521:1521 --name my_local_oracle_db -e ORACLE_PASSWORD=hossein -e ORACLE_DATABASE=HOSSEINTESTDB -v /opt/oracle/oracle-data:/opt/oracle/oradata gvenzl/oracle-xe:21c
+6- sudo docker exec <container-id> resetPassword hossein

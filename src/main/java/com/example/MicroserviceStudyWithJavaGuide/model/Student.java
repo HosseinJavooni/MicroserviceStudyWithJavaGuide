@@ -13,7 +13,8 @@ import lombok.Setter;
 @Entity
 public class Student {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name = "SEQUENCE_TEST"/*, initialValue = 30 , allocationSize = 10*/)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQUENCE_TEST")
     private Long id;
     @Column(nullable = false)
     private String firstName;
